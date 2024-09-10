@@ -36,7 +36,7 @@ void deleteLargest(BSTNode * root){
     BSTNode * previousNode = root;
     BSTNode * temp = root;
 
-    while (temp -> right != NULL){
+    while (temp -> right != nullptr){
         previousNode = temp;
         temp = temp -> right;
     }
