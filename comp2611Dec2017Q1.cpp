@@ -11,13 +11,13 @@ BSTNode* searchElseInsert(BSTNode* root, int key) {
     if (root == nullptr) {
         return new BSTNode(key); // would use createNode() here but i cant be bothered writing it, assume its createNode()
     }
-    if (key == root->key) {
+    if (key == root->key) { //if key is found, return the node that contains key
         std::cout << "Key " << key << " already exists in the tree.\n"; // Whats a namespace?
         return root;
     }
-    if (key < root->key) {
+    if (key < root->key) { //if key is smaller than current we recurse down the left subtree
         root->left = searchElseInsert(root->left, key);
-    } else {
+    } else { //the only other possible scenario is that key is bigger and we recurse down the right tree
         root->right = searchElseInsert(root->right, key);
     }
     return root;
